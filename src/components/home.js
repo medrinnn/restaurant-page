@@ -1,8 +1,8 @@
 function renderHome() {
-    const content = document.querySelector(".centent");
+    const content = document.querySelector(".content");
 
     const container = document.createElement("div");
-    container.setAttribute("id", "home-container");
+    container.id = "home-container";
 
     const name = document.createElement("h1");
     name.textContent = "medrinnn Restaurant";
@@ -13,7 +13,7 @@ function renderHome() {
     const button = document.createElement('button');
     button.textContent = "Book Your Place Now";
 
-    container.append(header, caption, button);
+    container.append(name, quote, button);
     content.append(container);
 }
 

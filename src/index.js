@@ -1,22 +1,25 @@
-import "./style.css"
-import Home from "./components/home.js"
+import "./style.css";
+import Home from "./components/home.js";
 
-const navs = document.querySelectorAll('nav');
-const content = document.querySelector('.content');
+const navs = document.querySelectorAll("nav");
+const content = document.querySelector(".content");
 
-navs.forEach(addEventListener("click", event => {
-    const nav = event.target.id;
+navs.forEach(nav => {
+    nav.addEventListener("click", event => {
+        const tab = event.target.id;
 
-    if (!nav) return;
+        if (!tab) return;
 
-    content.textContent = "";
+        content.textContent = "";
 
-    switch(tab) {
-        case 'home':
-            Home();
-            break;
-    } // TODO : Add contact + about + menu
-}))
+        switch (tab) {
+            case "home":
+                Home();
+                break;
+            // TODO: Add contact + about + menu
+        }
+    });
+});
 
 // Renders home page at initial render
-document.addEventListener('DOMContentLoaded', () => Home());
+document.addEventListener("DOMContentLoaded", Home);
